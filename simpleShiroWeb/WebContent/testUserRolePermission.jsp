@@ -1,28 +1,17 @@
-<%@ page pageEncoding="UTF-8" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
+
+<!DOCTYPE html>
 <html>
 <head>
-    <title>首页</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
 </head>
 <body>
-
-<h1>首页</h1>
-
-<shiro:guest>
-    <p>身份：游客</p>
-    <a href="<c:url value="login.jsp"/>">登录</a>
-    <a href="<c:url value="/register"/>">注册</a>
-</shiro:guest>
-
-<shiro:user>
-    <p>身份：<shiro:principal/></p>
-    <a href="<c:url value="/logout"/>">退出</a>
-</shiro:user>
-<shiro:hasPermission name="corporate:print">i am corporate</shiro:hasPermission>
-<shiro:principal/>
-<shiro:lacksPermission name="corporate:print">i am not corporate</shiro:lacksPermission>
-
+	<shiro:user><h1>there is a user logged in</h1></shiro:user>
+	<shiro:guest><h2>I have never logged in this web site</h2></shiro:guest>
+	<shiro:hasRole name="corporate"><h3>I am a corporate client</h3></shiro:hasRole>
+	<shiro:hasPermission name="corporate:show"><h4>my permission is corporate:show(identical tag)))</h4></shiro:hasPermission>
 </body>
 </html>
