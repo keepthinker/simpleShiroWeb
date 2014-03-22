@@ -1,2 +1,5 @@
 simple shiro web
 using datasoure(connection pool)
+
+It is recommended that your define login and logout in shiro.ini
+not in servlet class (keepthinker.LoginServlet.java .etc).
