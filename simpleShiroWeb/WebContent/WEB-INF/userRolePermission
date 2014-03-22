@@ -1,0 +1,8 @@
+# you can do these in database
+[users]
+root=123456,admin
+xiaomi=123456,corporate
+samsung=123456,corporate
+[roles]
+admin=*
+corporate=corporate:*

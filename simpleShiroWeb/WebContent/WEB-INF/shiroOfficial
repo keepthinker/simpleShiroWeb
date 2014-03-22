@@ -1,0 +1,5 @@
+[main]
+shiro.loginUrl = /login.jsp
+[urls]
+/login.jsp = authc
+/logout = logout
